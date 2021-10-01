@@ -141,7 +141,7 @@ if __name__ == '__main__':
             # Now check the picked box
             sign = board[row][column]
             okay = sign not in ['O', 'X']
-            if not okay:  # it's occupied - to the input again
+            if not okay:
                 # Print field currently occupied
                 print("Field currently occupied - repeat move!")
                 continue
