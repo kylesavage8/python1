@@ -94,13 +94,7 @@ def coin_flip():
 # Programming Assignment 5
 # Branching and Modules
 
-def today():
-    # Make tday = datetime.date.today
-    tday = datetime.date.today()
-    # Make timedelta  days=7
-    tdelta = datetime.timedelta(days=7)
-    # Print tday + tdelta that shows 7 days from today's date
-    print(tday + tdelta)
+
 
 def os_module():
     # Print to see what the current directory is
@@ -110,19 +104,14 @@ def os_module():
     # Print the size of venv file which displays the byte size
     print(os.stat('venv').st_size)
 
-def random_module():
-    # Displays a range of a deck of cards from 1 to 50
-    card_deck = list(range(1, 20))
-    # Make the card deck select 10 random cards each time
-    hand = random.sample(card_deck, k=6)
-    print(hand)
+
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    today()
+    #today()
     os_module()
-    random_module()
+    #random_module()
     # text_art()
     # coin_flip()
     # print_hi('PyCharm')
