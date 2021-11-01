@@ -180,7 +180,7 @@ def user_input():
 
 def strings3_apostrophe(string):
     regexp = re.compile(r'\'')
-    # Make a for loop setting j with range(len(string)
+    # Make a for loop setting i with range(len(string)
     for i in range(len(string)):
         # Make an if else statement checking if the word has an apostrophe else print the word
         if regexp.search(string[i]):
