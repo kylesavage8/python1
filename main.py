@@ -1,6 +1,8 @@
 import random
 import datetime
 import os
+import sys
+import re
 
 
 # This is a sample Python script.
@@ -90,7 +92,6 @@ def coin_flip():
             exit()
 
 
-
 # Programming Assignment 5
 # Branching and Modules
 
@@ -102,6 +103,7 @@ def today():
     # Print tday + tdelta that shows 7 days from today's date
     print(tday + tdelta)
 
+
 def os_module():
     # Print to see what the current directory is
     print(os.getcwd())
@@ -110,19 +112,99 @@ def os_module():
     # Print the size of venv file which displays the byte size
     print(os.stat('venv').st_size)
 
+
 def random_module():
-    # Displays a range of a deck of cards from 1 to 50
+    # Displays a range of a deck of cards from 1 to 20
     card_deck = list(range(1, 20))
-    # Make the card deck select 10 random cards each time
+    # Make the card deck select 6 random cards each time
     hand = random.sample(card_deck, k=6)
     print(hand)
 
 
-# Press the green button in the gutter to run the script.
+# Programming Assignment 6
+# String with branches
+
+def strings1_accept():
+    # In the terminal enter python main.py "then any written text"
+    # Print to see what the name of the file is
+    print(f"The name of the file is: {sys.argv[0]}")
+    # Print to see how many arguments were passed
+    print(f"There are {len(sys.argv) - 1} arguments passed")
+    # Make the variable number_of_arguments start at index 1 and ending at the end of the list
+    number_of_arguments = len(sys.argv[1:])
+    # Set the index i = 1
+    i = 1
+    # Make a while loop setting number_of_arguments >= i
+    while number_of_arguments >= i:
+        print(f"Argument {i}: {sys.argv[i]}")
+        i += 1
+
+
+def strings1_manipulate():
+    arg = sys.argv[1]
+    # In the terminal enter python main.py "then any written text"
+    if arg == "test":
+        print("Strings1 Test")
+    # In the terminal enter python main.py "then any written text"
+    elif arg == "manipulate":
+        print("Test is manipulated")
+    # In the terminal enter python main.py "then input anything the function doesn't recognize"
+    else:
+        print("The argument is invalid")
+
+
+def user_input():
+    # Make the user input something
+    user = input("User input: ")
+    return user
+
+
+def string2_reading(s):
+    vowels = ["a", "e", "i", "o", "u"]
+    # Make fs =  first string
+    fs = []
+    # Make a for loop setting i in range s
+    for i in range(len(s)):
+        if s[i][0].lower() in vowels:
+            fs.append(f"{s[i]}yay")
+        else:
+            consonant = s[i][0]
+            fs.append(f"{s[i][1:]}{consonant}ay")
+    print(' '.join(fs).lower())
+
+
+def user_input():
+    user = input("User input: ")
+    return user
+
+
+def strings3_apostrophe(string):
+    regexp = re.compile(r'\'')
+    # Make a for loop setting j with range(len(string)
+    for i in range(len(string)):
+        # Make an if else statement checking if the word has an apostrophe else print the word
+        if regexp.search(string[i]):
+            break_sentence(string[i], "approved")
+        else:
+            break_sentence(string[i])
+
+
+def break_sentence(word, contains_apostrophe="not approved"):
+    # Make an if else statement if the word contains_apostrophe else print the rest of the words
+    if contains_apostrophe == "approved":
+        print(f"List the apostrophe word: {word}")
+    else:
+        print(word)
+
+
 if __name__ == '__main__':
-    today()
-    os_module()
-    random_module()
+    strings1_accept()
+    strings1_manipulate()
+    string2_reading(user_input().split(" "))
+    strings3_apostrophe(user_input().split(" "))
+    # today()
+    # os_module()
+    # random_module()
     # text_art()
     # coin_flip()
     # print_hi('PyCharm')
