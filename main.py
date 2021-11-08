@@ -224,7 +224,7 @@ if __name__ == '__main__':
         os.rename("regex.txt", "new_regex.txt")
         # Print the new text file
         print("Renamed regex.txt -> new_regex.txt")
-        if os.access("access.txt", os.F_OK):
+        if os.access("regex.txt", os.F_OK):
             # Print to check if the original text file was properly removed
             print("File regex.txt was removed.")
     except:
