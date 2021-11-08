@@ -5,8 +5,8 @@ if __name__ == '__main__':
     if os.access("regex.txt", os.F_OK):
         print("File is there.")
     # Make f_ok open the regex.txt to read the file
-    f_ok = open("regex.txt", "r")
-    getlines = f_ok.readlines()
+    f = open("regex.txt", "r")
+    getlines = f.readlines()
     # Make a for loop so le = line gets the line
     for le in getlines:
         locateitems = re.locateall(".$", le)
