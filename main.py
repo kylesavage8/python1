@@ -6,9 +6,19 @@ import re
 
 # Programming Assignment 6
 # String with branches
+# To run these two programs you have to write text into the terminal. This file is not run by the "Run" button,
+# To run the strings1_accept() function follow these steps:
+# Step 1: In the terminal enter python main.py then type any written text
+# Step 2: Make sure the strings1_manipulate() function in main is commented out.
+# To run the strings1_manipulate() function follow these steps:
+# Step 1: In the terminal enter python main.py then type the word test
+# Step 2: In the terminal enter python main.py then type the word manipulate
+# Step 3: In the terminal enter python main.py then input anything the function doesn't recognize
+# Step 4: Make sure the strings1_accept() function in main is commented out.
+
 
 def strings1_accept():
-    # In the terminal enter python main.py "then any written text"
+    # In the terminal enter python main.py then type any written text
     # Print to see what the name of the file is
     print(f"The name of the file is: {sys.argv[0]}")
     # Print to see how many arguments were passed
@@ -25,13 +35,13 @@ def strings1_accept():
 
 def strings1_manipulate():
     arg = sys.argv[1]
-    # In the terminal enter python main.py "then any written text"
+    # In the terminal enter python main.py then type the word test
     if arg == "test":
         print("Strings1 Test")
-    # In the terminal enter python main.py "then any written text"
+    # In the terminal enter python main.py then type the word manipulate
     elif arg == "manipulate":
         print("Test is manipulated")
-    # In the terminal enter python main.py "then input anything the function doesn't recognize"
+    # In the terminal enter python main.py then input anything the function doesn't recognize
     else:
         print("The argument is invalid")
 
